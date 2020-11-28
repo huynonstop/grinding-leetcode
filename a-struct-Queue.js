@@ -1,3 +1,4 @@
+// https://stackoverflow.com/questions/44031591/performance-of-array-push-vs-array-unshift
 class Queue {
 	constructor() {
 		this.queue = {};
