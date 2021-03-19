@@ -1,0 +1,23 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "All leetcode's solution I solved are here",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huynonstop/GrindingLeetcode.git"
+  },
+  "keywords": [
+    "leetcode"
+  ],
+  "author": "Huy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huynonstop/GrindingLeetcode/issues"
+  },
+  "homepage": "https://github.com/huynonstop/GrindingLeetcode#readme"
+}
