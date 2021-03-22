@@ -1,4 +1,4 @@
-import toTree from './arrayToBinTree.js';
+import toTree from './utils/arrayToBinTree.js';
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
