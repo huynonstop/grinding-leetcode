@@ -20,7 +20,7 @@ function TreeNode(val, left, right) {
   this.right = right === undefined ? null : right;
 }
 
-function visual(root) {
+export function visual(root) {
   const heightArray = [];
   const helper = (node, h) => {
     if (!node) return;
