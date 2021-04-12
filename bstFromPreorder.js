@@ -1,4 +1,4 @@
-import { visual } from './utils/arrayToBinTree.js';
+import { visual } from './utils/arrayToBST.js';
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
