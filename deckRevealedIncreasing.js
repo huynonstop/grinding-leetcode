@@ -1,28 +1,34 @@
-function ListNode(val, next) {
-  this.val = val === undefined ? 0 : val;
-  this.next = next === undefined ? null : next;
-}
-
-export const arrayToLinkedList = (array) => {
-  const list = add(null, array[0]);
-  let cur = list;
-  for (let i = 1; i < array.length; i++) {
-    cur = add(cur, array[i]);
+/**
+ * @param {number[]} deck
+ * @return {number[]}
+ */
+var deckRevealedIncreasing = function (deck) {
+  deck.sort((a, b) => b - a);
+  const deque = new DequeLinkedList();
+  for (const d of deck) {
+    const head = deque.removeTail();
+    if (head) {
+      deque.addHead(head);
+    }
+    deque.addHead(new Node(d));
   }
-  return list;
+  return deque.toArray();
 };
 
-const add = (pre, val) => {
-  const node = new ListNode(val);
-  if (pre === null) {
-    pre = node;
-    return node;
+var deckRevealedIncreasing = function (deck) {
+  let n = deck.length;
+  const deque = new DequeLinkedList();
+  deque.fromArrayIndex(deck);
+  const rs = Array(n);
+  deck.sort((a, b) => a - b);
+  for (const d of deck) {
+    rs[deque.removeHead().val] = d;
+    if (deque.head) deque.addTail(deque.removeHead());
   }
-  pre.next = node;
-  return node;
+  return rs;
 };
 
-export class Node {
+class Node {
   constructor(val, next, pre) {
     this.val = val === undefined ? 0 : val;
     this.next = next === undefined ? null : next;
@@ -30,7 +36,7 @@ export class Node {
   }
 }
 
-export class DequeLinkedList {
+class DequeLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -93,4 +99,17 @@ export class DequeLinkedList {
     }
     return array;
   }
+
+  fromArray(array) {
+    for (const a of array) {
+      this.addTail(new Node(a));
+    }
+  }
+
+  fromArrayIndex(array) {
+    for (let i = 0; i < array.length; i++) {
+      this.addTail(new Node(i));
+    }
+  }
 }
+deckRevealedIncreasing([17, 13, 11, 2, 3, 5, 7]);
