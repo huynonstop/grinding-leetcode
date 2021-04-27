@@ -1,2 +1,4 @@
 **/out
 **/.vscode
+*.xml
+**/.idea
