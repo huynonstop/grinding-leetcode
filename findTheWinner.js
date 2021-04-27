@@ -3,6 +3,30 @@
  * @param {number} k
  * @return {number}
  */
+
+//https://leetcode.com/problems/find-the-winner-of-the-circular-game/discuss/1152705/JavaC%2B%2BPython-4-lines-O(n)-time-O(1)-space
+//  Explanation
+//  In the end,n = 1, the index of winner index is 0 (base-0)
+
+//  We think with one step back,
+//  when n = 2, the index of winner is 0 + k, but we have only n peopple,
+//  so the winner index is (0 + k) % 2 (base-0)
+
+//  We think with one more step back,
+//  when n = 3, the index of winner is f(2) + k, but we have only n peopple,
+//  so the winner index is (f(2) + k) % 3 (base-0)
+
+//  We think with n more step back,
+//  the index of winner is f(n-1) + k, but we have only n peopple,
+//  so the winner index is (f(n-1) + k) % n (base-0)
+
+//  Done.
+function findTheWinner(n, k) {
+  let res = 0;
+  for (let i = 1; i <= n; ++i) res = (res + k) % i;
+  return res + 1;
+}
+
 var findTheWinner = function (n, k) {
   const ll = new CircularLinkedList(n);
   while (ll.size > 1) {
