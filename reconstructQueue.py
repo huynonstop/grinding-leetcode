@@ -1,7 +1,10 @@
 # https://leetcode.com/problems/queue-reconstruction-by-height/discuss/89359/Explanation-of-the-neat-Sort%2BInsert-solution
+from typing import List
+
+
 class Solution:
     def reconstructQueue(self, people: List[List[int]]) -> List[List[int]]:
-        people.sort(key=lambda (h, k): (-h, k))
+        people.sort(key=lambda p: (-p[0], p[1]))
         queue = []
         for p in people:
             queue.insert(p[1], p)
