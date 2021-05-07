@@ -11,7 +11,7 @@ export default (array, Tree = TreeNode, visual = false) => {
     return node;
   };
   const tree = helper(0);
-  if (visual) console.log(visual(tree));
+  if (visual) console.log(visualTree(tree));
   return tree;
 };
 
@@ -27,7 +27,7 @@ export const sortedArrayToBST = (array, Tree = TreeNode, visual = false) => {
     return root;
   };
   const tree = helper(0, n - 1);
-  if (visual) console.log(visual(tree));
+  if (visual) console.log(visualTree(tree));
   return tree;
 };
 
