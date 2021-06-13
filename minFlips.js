@@ -17,7 +17,8 @@ var minFlips = function (target) {
 
 function minFlips(target) {
   let ans = target[0] - '0';
-  for (let i = 1; i < target.length; i++) if (target[i] !== target[i - 1]) ans++;
+  for (let i = 1; i < target.length; i++)
+    if (target[i] !== target[i - 1]) ans++;
   return ans;
 }
 minFlips('10111');
