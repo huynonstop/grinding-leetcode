@@ -5,7 +5,7 @@ function linearSearch(arr: number[], key: number): number {
 	}
 	return -1;
 }
-
+// https://stackoverflow.com/questions/12144802/finding-multiple-entries-with-binary-search
 function binarySearchR(arr: number[], key: number): number {
 	//O(1) O(logN)
 	const n = arr.length;
