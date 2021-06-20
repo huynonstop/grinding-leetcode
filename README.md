@@ -1,2 +1,2 @@
 # GrindingLeetcode
-All leetcode's solution I solved are here
+All solution I solved are here
