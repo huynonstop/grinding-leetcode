@@ -12,7 +12,7 @@
 
 - A sorting algorithm is **stable** if it does not change the order of elements with the same value.
 
- **Online/Offline:** The algorithm that accepts a new element while the sorting process is going on, that algorithm is called the online sorting algorithm. From, the above sorting algorithms, the insertion sort is online.
+  **Online/Offline:** The algorithm that accepts a new element while the sorting process is going on, that algorithm is called the online sorting algorithm. From, the above sorting algorithms, the insertion sort is online.
 
 ![img](assets/_alo-sort/comparison-of-sorting-algorithms-compare3-205baca859250562.png)
 
@@ -37,3 +37,5 @@ When the input array is almost sorted or input size is small, then the insertion
 [6.851: Advanced Data Structures (mit.edu)](https://courses.csail.mit.edu/6.851/)
 
 [6.854/18.415J: Advanced Algorithms (mit.edu)](http://courses.csail.mit.edu/6.854/20/)
+
+[Quick Sort partition](https://en.wikipedia.org/wiki/Quicksort#Lomuto_partition_scheme)
