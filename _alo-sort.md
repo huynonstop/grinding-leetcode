@@ -1,12 +1,14 @@
-# Comparison based sorting algorithms
+# Sorting
+
+## Comparison based sorting algorithms
 
 ![img](assets/_alo-sort/comparison-of-sorting-algorithms-compare1-18082c14f960abf3.png)
 
-# Non-comparison based sorting algorithm
+## Non-comparison based sorting algorithm
 
 ![img](assets/_alo-sort/comparison-of-sorting-algorithms-compare2-e212ddee4d013f01.png)
 
-# In-place and Stable sorting Algorithms
+## In-place and Stable sorting Algorithms
 
 - A sorting algorithm is **In-place** if the algorithm does not use extra space for manipulating the input but may require a small though nonconstant extra space for its operation. Or we can say, a sorting algorithm sorts in-place if only a constant number of elements of the input array are ever stored outside the array.
 
