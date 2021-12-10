@@ -36,4 +36,7 @@ class Solution:
                     grid[new_x][new_y] = 2
                     # add the next level rotten to the queue
                     rotten.append((new_x, new_y))
-        return min_passed if fresh_cnt == 0 else -1
+
+        if fresh_cnt > 0:
+            return - 1
+        return min_passed
