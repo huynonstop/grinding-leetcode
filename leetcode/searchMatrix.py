@@ -84,3 +84,67 @@ print(
          [10, 13, 14, 17, 24],
          [18, 21, 23, 26, 30]],
         20, (0, 0), (4, 4)))
+
+
+# Integers in each row are sorted from left to right.
+# The first integer of each row is greater than the last integer of the previous row.
+# [[1, 3, 5, 7],
+#  [10, 11, 16, 20],
+#  [23, 30, 34, 60]]
+
+class Solution:
+    def searchMatrix(
+            self, matrix: List[List[int]],
+            target: int) -> bool:
+        return search_matrix(matrix, target)
+
+
+def search_matrix(matrix, target):
+    R = len(matrix)
+    C = len(matrix[0])
+
+    t = 0
+    d = R - 1
+
+    while t < d:
+        m = (t + d + 1) >> 1
+        if target < matrix[m][0]:
+            d = m - 1
+        else:
+            t = m
+
+    r = t
+    s = 0
+    e = C - 1
+    while s <= e:
+        m = (s + e) >> 1
+        if target == matrix[r][m]:
+            return True
+        elif target < matrix[r][m]:
+            e = m - 1
+        else:
+            s = m + 1
+    return False
+
+
+def search_matrix_2(matrix, target):
+    R = len(matrix)
+    C = len(matrix[0])
+
+    l = 0
+    r = R * C - 1
+
+    while l <= r:
+        m = (l + r) >> 1
+        num_mid = matrix[m // C][m % C]
+        if num_mid == target:
+            return True
+        elif num_mid > target:
+            r = m - 1
+        else:
+            l = m + 1
+
+    return False
+
+
+search_matrix_2([[1, 3]], 3)
