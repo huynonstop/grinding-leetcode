@@ -10,13 +10,13 @@
  * @param {number} val
  * @return {ListNode}
  */
-var removeElements = function(head, val) {
-  if(!head) return null;
-  while (head.val === val) {
+ var removeElements = function(head, val) {
+  while (head && head.val === val) {
     let cur = head;
     head = head.next;
     cur.next = null;
   }
+  if(!head) return head;
   let cur = head;
   while(cur.next) {
     let next = cur.next;
