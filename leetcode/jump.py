@@ -3,12 +3,13 @@ from typing import List
 
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
-        return can_jump(nums)
+        return can_jump_memo(nums)
 
 
-def can_jump(nums):
+def can_jump_memo(nums):
     n = len(nums)
-    memo = [None] * n
+    memo = [None] * (n-1)
+    memo.append(True)
 
     def helper(i):
         if memo[i] is None:
@@ -24,21 +25,21 @@ def can_jump(nums):
     return helper(0)
 
 
-def can_jump(nums):
+def can_jump_dp(nums):
     n = len(nums)
-    memo = [False] * (n - 1)
-    memo.append(True)
+    dp = [False] * (n - 1)
+    dp.append(True)
     i = n - 1
     while i >= 0:
         r = min(n - 1, nums[i] + i)
         l = i
         c = False
         while l <= r and not c:
-            c = c or memo[l]
+            c = c or dp[l]
             l += 1
-        memo[i] = c
+        dp[i] = c
         i -= 1
-    return memo[0]
+    return dp[0]
 
 
 def can_jump_greedy(nums):
